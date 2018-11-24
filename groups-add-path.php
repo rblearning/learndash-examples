@@ -13,7 +13,6 @@ if ($formid == 12){
 $learndash_group_ids = array( 1180, 2288 );
 
 // adds the users to the groups (https://bitbucket.org/snippets/learndash/MK6Rp/learndash-add-new-user-to-group)
-
 learndash_set_users_group_ids( $user_id, $learndash_group_ids );
 }
  
@@ -24,7 +23,6 @@ else{
 $learndash_group_ids = array( 2222, 2156 );
 
 // adds the users to the groups (https://bitbucket.org/snippets/learndash/MK6Rp/learndash-add-new-user-to-group)
-
 learndash_set_users_group_ids( $user_id, $learndash_group_ids );
 }
 
