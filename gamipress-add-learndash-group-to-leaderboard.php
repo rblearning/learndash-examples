@@ -21,7 +21,6 @@ function my_prefix_custom_leaderboard_column_output($output, $leaderboard_id, $p
 	{
 
 	// Loop through the items so we can get the group IDs for each user
-
 	foreach($item as $items)
 		{
 		/*
