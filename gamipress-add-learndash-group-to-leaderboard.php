@@ -1,3 +1,4 @@
+<?php
 /*
 The below functions will add a custom column (Group) to GamiPress leaderboards on WordPress.
 
@@ -63,3 +64,4 @@ function my_prefix_custom_leaderboard_column_output($output, $leaderboard_id, $p
 // In previous function the new column key is "my_custom_column", so the filter will be: gamipress_leaderboards_leaderboard_column_my_custom_column
 
 add_filter('gamipress_leaderboards_leaderboard_column_my_custom_column', 'my_prefix_custom_leaderboard_column_output', 10, 6);
+?>
