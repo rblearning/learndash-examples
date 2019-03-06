@@ -32,27 +32,29 @@ function my_prefix_custom_leaderboard_column_output($output, $leaderboard_id, $p
 		$results = $wpdb->get_results("SELECT meta_key FROM {$wpdb->prefix}usermeta WHERE user_id = {$item['user_id']} AND meta_key LIKE '%learndash_group_users_%'");
 
 		// We run a count on the result which tells us how many groups they are assigned to, we can then show different messages if they are part of multiple groups or not assigned to any.
-
 		$countofgroups = count($results);
+
+		// If user has 1 group assigned, we can display the group name.
 		if ($countofgroups == 1)
 			{
 
 			// Loop through the results to output the title of the group
-
 			foreach($results as $result)
 				{
-
 				// This strips out all characters apart from numbers, we can then use the numbers to query for the post name
-
 				$groupid = preg_replace('[\D]', '', $result->meta_key);
+
 				$getpost = get_post($groupid);
+				
 				return $getpost->post_title;
 				}
 			}
+		// If user has more than 1 group assigned, display a message saying they are assigned to multiple groups
 		elseif ($countofgroups > 1)
 			{
 			return "User assigned to multiple groups.";
 			}
+		// If user isn't asssigned to any groups, display the relevant message
 		elseif ($countofgroups == 0)
 			{
 			return "No group assigned";
@@ -62,6 +64,5 @@ function my_prefix_custom_leaderboard_column_output($output, $leaderboard_id, $p
 
 // This filter dynamically changes based on the column key following the next pattern: gamipress_leaderboards_leaderboard_column_{key}
 // In previous function the new column key is "my_custom_column", so the filter will be: gamipress_leaderboards_leaderboard_column_my_custom_column
-
 add_filter('gamipress_leaderboards_leaderboard_column_my_custom_column', 'my_prefix_custom_leaderboard_column_output', 10, 6);
 ?>
