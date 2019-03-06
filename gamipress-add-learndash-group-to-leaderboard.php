@@ -11,7 +11,7 @@ function my_prefix_custom_leaderboard_column($columns, $leaderboard_id, $leaderb
 	{
 	// Add the new column
 	// The key "my_custom_column" will be used to filter the column output in next function
-	// The "Custom Column" will be the column title
+	// The "Group" will be the column title
 	$columns['my_custom_column'] = __('Group');
 	return $columns;
 	}
