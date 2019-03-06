@@ -1,7 +1,11 @@
 /*
 The below functions will add a custom column (Group) to GamiPress leaderboards on WordPress.
+
 These functions only returns the first group they are part of, it will not bring in multiple groups, nor will it show groups which the user is a leader of.
+
+See https://gamipress.com/snippets/gamipress-leaderboards/add-a-custom-column-to-the-leaderboard-table/ for GamiPress Reference
 */
+
 function my_prefix_custom_leaderboard_column($columns, $leaderboard_id, $leaderboard)
 	{
 	// Add the new column
